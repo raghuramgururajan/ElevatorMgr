@@ -18,29 +18,38 @@ Restful API's
 The main rest API's are as below
 
 a)Starting the Elevator
+
 Endpoint : /Elevatorapp/Elevator/start
 
 Input :
 {"maxLevel" : <any integer>}
 
 CURL command for the same :
+
 curl -X POST --header "Content-Type: application/json" --header "Accept: application/json" -d "10" "http://localhost:8080/Elevatorapp/Elevator/start"
 Full Qualified Url:http://localhost:8080/Elevatorapp/Elevator/start
 
 b)Stopping the elevator
+
 Endpoint : /Elevatorapp/Elevator/stop
+
 CURL command for the same :
+
 curl -X POST --header "Content-Type: application/json" --header "Accept: application/json" "http://localhost:8080/Elevatorapp/Elevator/stop"
 Full Qualified Url:http://localhost:8080/Elevatorapp/Elevator/stop
 
 c)Adding request to Elevator
+
 Endpoint : /Elevatorapp/Elevator/request
+
 Input :
 {
       "fromFloor": 3,
       "toFloor": 6
 }
+
 CURL command for the same:
+
 curl -X PUT --header "Content-Type: application/json" --header "Accept: application/json" -d "{
   \"fromFloor\": 3,
   \"toFloor\": 6
@@ -48,14 +57,20 @@ curl -X PUT --header "Content-Type: application/json" --header "Accept: applicat
        
 
 d)Get the Top Request currently being processed by Elevator
+
 Endpoint:/Elevatorapp/Elevator/request/top
+
 Curl command for the same:
+
 curl -X GET --header "Accept: application/json" "http://localhost:8080/Elevatorapp/Elevator/request/top"
 
 
 E)Get all the request processed by elevator
+
 Endpoint:/Elevatorapp/Elevator/request/all
+
 Curl Command for the same :
+
 curl -X GET --header "Accept: application/json" "http://localhost:8080/Elevatorapp/Elevator/request/all"
 
 Sample Workflow
