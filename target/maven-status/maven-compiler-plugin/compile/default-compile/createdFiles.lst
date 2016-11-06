@@ -1,8 +1,0 @@
-com/elevatormgr/web/controller/ElevatorRequest.class
-com/elevatormgr/web/ElevatorConstants.class
-com/elevatormgr/web/controller/Elevator.class
-com/elevatormgr/web/controller/ElevatorService.class
-com/elevatormgr/web/controller/ElevatorResponse.class
-com/elevatormgr/web/util/ValidationUtil.class
-com/elevatormgr/web/controller/ElevatorController.class
-com/elevatormgr/web/util/ElevatorStates.class
