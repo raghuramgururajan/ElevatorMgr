@@ -28,8 +28,27 @@ public class ElevatorController {
                 return new ResponseEntity<ElevatorResponse>(new ElevatorResponse(new ElevatorRequest[0], msg), HttpStatus.ACCEPTED);
             }
         }
-        msg = "Invalid Request parameters";
+        msg = "Invalid Request";
         return new ResponseEntity<ElevatorResponse>(new ElevatorResponse(new ElevatorRequest[0], msg), HttpStatus.BAD_REQUEST);
+
+    }
+
+    @RequestMapping(value = "/stop", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<ElevatorResponse> stopElevator() {
+        String msg = "";
+            if (!elevatorService.isElevatorStarted()) {
+                msg = "Elevator is already stopped";
+
+            }
+           else if (elevatorService.shutDownElevator() == Boolean.TRUE) {
+                msg = "Sucessfully stopped elevator";
+                return new ResponseEntity<ElevatorResponse>(new ElevatorResponse(new ElevatorRequest[0], msg), HttpStatus.ACCEPTED);
+            }
+           else {
+                msg = "Elevator cannot be stopped now .Please try later";
+            }
+
+        return new ResponseEntity<ElevatorResponse>(new ElevatorResponse(new ElevatorRequest[0], msg), HttpStatus.CONFLICT);
 
     }
 
